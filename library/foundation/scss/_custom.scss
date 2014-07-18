@@ -1,0 +1,383 @@
+// Para los mixins
+@import "compass/css3";
+// Para las media queries
+// @import "foundation";
+// importamos la fuente de Ubuntu para los títulos, desde Google
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
+@import url(http://fonts.googleapis.com/css?family=Special+Elite);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+//////////////////////////////////////////////////////////////////
+
+// declaramos los colores que vamos a usar
+$link-color: #BD3737;
+$link-hover-color: #942222;
+$title: #333333;
+$navbar: #333333;
+$border-color: #ddd;
+$white: #ffffff;
+//////////////////////////////////////////////////////////////////
+
+// Declaramos otras variables
+$site-title-font: 'Special Elite', cursive;
+$titles-font: 'Ubuntu', sans-serif;
+$text-font: 'Lato', sans-serif;
+//////////////////////////////////////////////////////////////////
+
+// SCSS Genérico
+body {
+	background: url('../../images/grey.png');
+	font-family: $text-font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $titles-font;
+	color: $title;
+}
+
+a {
+	color: $link-color;
+
+	&:hover {
+		color: $link-hover-color;
+	}
+}
+//////////////////////////////////////////////////////////////////
+
+// SCSS para el header
+.title-area .name h1 {
+    color: $white;
+    font-family: $site-title-font;
+    font-size: 2em;
+}
+
+.header {
+	background-color: $navbar;
+}
+
+.header-narrow {
+	margin: 0 auto;
+	max-width: 1000px;
+}
+
+.top-bar-section ul li {
+	border-left: 1px solid #4e4e4e;
+	a {
+		text-transform: uppercase;
+		font-family: $text-font;
+	}
+}
+
+//////////////////////////////////////////////////////////////////
+
+// Quitamos el tiempo del slider
+.orbit-timer { visibility: hidden; }
+//////////////////////////////////////////////////////////////////
+
+// Contenido principal: Artículos, sidebar y footer
+#content {
+	background-color: #efefef;
+	border-left: 1px solid $border-color;
+	border-right: 1px solid $border-color;
+
+	#main {
+		background-color: $white;
+		border-right: 1px solid $border-color;
+		border-bottom: 1px solid $border-color;
+
+		.pair {
+			padding-top: 1em;
+			border-bottom: 1px dotted $border-color;
+			overflow:hidden;
+			margin: 2em;
+
+			.columns {
+				padding: 0px;
+			}
+
+			article {
+				.attachment-post-thumbnail {
+					-webkit-box-shadow: 0px 19px 10px -11px rgba(56,56,56,0.4);
+					-moz-box-shadow: 0px 19px 10px -11px rgba(56,56,56,0.4);
+					box-shadow: 0px 19px 10px -11px rgba(56,56,56,0.4);
+				}
+
+				.entry-title{
+					font-size: 22px;
+					line-height: 1.2em;
+					margin-top: 1em;
+					margin-bottom: 1em;
+
+					a {
+						color: $title;
+
+						&:hover{
+							color: $link-hover-color;
+						}
+					}
+				}
+
+				// Si es par, margen a la izquierda
+				&:nth-child(even) {
+					padding-left: 10px;	
+				}
+				
+				// Si es impar, margen a la derecha
+				&:nth-child(odd) {
+					padding-right: 10px;		
+				}
+			}
+		}
+		
+		.pagination {
+			min-height: 3em;
+			a {
+				background-color: $link-color;
+				color: $white;
+
+				padding: 8px; 
+				margin-left: 32px; 
+				margin-right: 32px; 
+
+				&:hover {
+					background-color: $link-hover-color;
+					@include transition(all 0.6s ease-in-out);
+				}
+			}
+		}
+
+		.single {
+			padding: 1em;
+
+			h1, h2, h3, h4, h5, h6 {
+				border-bottom: 1px dotted $border-color;
+			}
+			
+			img {
+				padding: 1em;
+			}
+
+			blockquote {
+			  background: #f9f9f9;
+			  border-left: 10px solid #ccc;
+			  margin: 1.5em 10px;
+			  padding: 0.5em 10px;
+			  quotes: "\201C""\201D""\2018""\2019";
+
+				&:before {
+				  	color: #ccc;
+				  	content: open-quote;
+				  	font-size: 4em;
+				  	line-height: 0.1em;
+					margin-right: 0.25em;
+					vertical-align: -0.4em;
+				}
+				p {
+					display: inline;
+				}
+			}
+
+			.article-footer {
+				padding-top: 1em;
+				padding-bottom: 1em;
+				margin-top: 2em;
+				margin-bottom: 2em;
+				border-top: 1px dotted $border-color;
+				border-bottom: 1px dotted $border-color;
+			}
+		}
+	}
+
+	.sidebar {
+		padding: 30px;
+
+		h1, h2, h3, h4, h5, h6{
+			font-weight: bold;
+			color: #363636;
+		}
+
+		.widgettitle{
+			font-size: 1.6em;
+		}
+
+		.popular-list {
+			list-style: none;
+			margin-left: 0px;
+
+			// color: $white;
+			font-size: .8em;
+
+			a {
+				// color: $white;
+				font-weight: bold;
+			}
+
+			.popular-element{
+				background-color: $white;
+				border: 1px solid $border-color;
+
+				padding: 8px;
+				min-height: 32+8+8px;
+				
+				// @include border-radius(5px);
+				margin-top: 13px;
+				
+				&:hover{
+					background-color: $link-color;
+					a {
+						color: $white;
+						@include transition(all 0.6s ease-in-out);
+					}
+					@include transition(all 0.6s ease-in-out);
+				}
+
+				.popular-title {
+					vertical-align: middle;
+				}
+
+				.popular-thumbnail {
+					@extend .left;
+					margin-right: 8px;
+					margin-bottom: 8px;
+				}
+			}
+		}
+	}
+
+	.footer {
+		background-color: #333333;
+		color: $white;
+
+		h3 {
+			color: $white;
+		}
+
+		.about {
+			padding: 2em;
+			p {
+				font-size: .85em;
+			}
+		}
+
+		.logo-footer {
+			margin: 0 auto;
+			min-height: 180px;
+			max-width: 410px;
+			background: url('../../images/logo.png');
+      		background-repeat: no-repeat;
+      		background-position: top center;
+      		@include background-size(contain);
+		}
+
+		.copyright {
+			font-size: .85em;
+			text-align: center;
+		}
+	}
+}
+//////////////////////////////////////////////////////////////////
+
+// Estilos para disqus
+.dsq-widget-item {
+
+	position: relative;
+	margin-left: 56px;
+	padding: 8px;
+	background: $white;
+	border: 1px solid $border-color;
+	@include border-radius(5px);
+	font-size: 0.8em;
+
+	&:before{
+		content: "";
+		position: absolute;
+		top: 50%;
+		margin-top: -12px;
+		left: -12px;
+		border-top: 12px solid transparent;
+		border-bottom: 12px solid transparent;
+		border-right: 12px solid white;
+		z-index: 1;
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		margin-top: -13px;
+		left: -13px;
+		border-top: 13px solid transparent;
+		border-bottom: 13px solid transparent;
+		border-right: 13px solid #ccc;
+	}
+
+	.dsq-widget-comment {
+		p {	font-size: 1em; }
+	}
+}
+//////////////////////////////////////////////////////////////////
+
+// Media queries
+
+@media #{$medium-only} {
+	#content {
+		border: none;
+		#main {
+			border: none;
+
+			.pair {
+				// border: none;
+			}
+		}
+	}
+}
+
+@media #{$small-only} {
+	#content {
+		border: none;
+		#main {
+			border: none;
+
+			.pair {
+				padding: 0px;
+				border: none;
+				//border-bottom: 1px dotted $border-color;
+				//overflow:hidden;
+				margin: 1em;
+				article {
+					border-bottom: 1px dotted $border-color;
+					margin-bottom: 1em; 
+					.attachment-post-thumbnail {
+						// -webkit-box-shadow: 0px 19px 10px -11px rgba(56,56,56,0.4);
+						// -moz-box-shadow: 0px 19px 10px -11px rgba(56,56,56,0.4);
+						// box-shadow: 0px 19px 10px -11px rgba(56,56,56,0.4);
+					}
+
+					.entry-title{
+						// font-size: 22px;
+						// line-height: 1.2em;
+						// margin-top: 1em;
+						// margin-bottom: 1em;
+
+						a {
+							// color: $title;
+
+							// &:hover{
+							// 	color: $link-hover-color;
+							// }
+						}
+					}
+
+					// Si es par, margen a la izquierda
+					&:nth-child(even) {
+						padding: 0px;	
+					}
+					
+					// Si es impar, margen a la derecha
+					&:nth-child(odd) {
+						padding: 0px;		
+					}
+				}
+			}
+		}
+	}
+}
