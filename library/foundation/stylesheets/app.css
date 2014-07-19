@@ -8395,3 +8395,104 @@ a:hover {
     padding: 0px;
   }
 }
+/* line 1, ../scss/_cookies.scss */
+.cdp-cookies-alerta {
+  width: 100%;
+  color: #bbbbbb;
+  background-color: #444444;
+  z-index: 10000;
+}
+
+/* line 7, ../scss/_cookies.scss */
+.cdp-cookies-alerta .cdp-cookies-texto {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 5px 10px 5px 10px;
+}
+
+/* line 12, ../scss/_cookies.scss */
+.cdp-cookies-alerta .cdp-cookies-texto h4 {
+  padding: 0 0 5px 0;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+}
+
+/* line 18, ../scss/_cookies.scss */
+.cdp-cookies-alerta .cdp-cookies-texto p {
+  padding: 5px 0;
+  margin: 0;
+  text-align: center;
+  font-size: 10px;
+  font-weight: normal;
+  line-height: 11px;
+  text-rendering: optimizeLegibility;
+}
+
+/* line 29, ../scss/_cookies.scss */
+.cdp-cookies-layout-ventana.cdp-cookies-pos-superior {
+  display: none;
+  position: fixed;
+  top: 0;
+}
+
+/* line 36, ../scss/_cookies.scss */
+.cdp-cookies-layout-ventana.cdp-cookies-pos-inferior {
+  display: none;
+  position: fixed;
+  bottom: 0;
+}
+
+/* line 44, ../scss/_cookies.scss */
+.cdp-cookies-alerta.cdp-cookies-textos-izq .cdp-cookies-texto h4,
+.cdp-cookies-alerta.cdp-cookies-textos-izq .cdp-cookies-texto p {
+  text-align: left;
+}
+
+/* line 49, ../scss/_cookies.scss */
+.cdp-cookies-alerta.cdp-cookies-tema-rojo {
+  background-color: #bd3737;
+}
+
+/* line 52, ../scss/_cookies.scss */
+.cdp-cookies-alerta.cdp-cookies-tema-rojo .cdp-cookies-texto h4 {
+  color: #ffffff;
+}
+
+/* line 55, ../scss/_cookies.scss */
+.cdp-cookies-alerta.cdp-cookies-tema-rojo .cdp-cookies-texto p {
+  color: #dddddd;
+}
+
+/* line 58, ../scss/_cookies.scss */
+.cdp-cookies-alerta.cdp-cookies-tema-rojo .cdp-cookies-texto a {
+  color: white;
+  font-weight: bold;
+}
+
+/* line 64, ../scss/_cookies.scss */
+.cdp-cookies-alerta.cdp-cookies-tema-rojo .cdp-cookies-texto a:hover,
+.cdp-cookies-alerta.cdp-cookies-tema-rojo .cdp-cookies-texto a:active,
+.cdp-cookies-alerta.cdp-cookies-tema-rojo .cdp-cookies-texto a:visited {
+  color: #ffffff;
+}
+
+/* line 69, ../scss/_cookies.scss */
+.cdp-cookies-alerta .cdp-cookies-boton-cerrar {
+  font-size: 12px;
+  line-height: 14px;
+  display: block;
+  width: 75px;
+  margin: 5px auto;
+  text-decoration: none;
+  border: none;
+  text-align: center;
+  padding: 3px 10px;
+  background-color: #222;
+  color: #fff !important;
+}
+
+/* line 82, ../scss/_cookies.scss */
+.cdp-cookies-alerta .cdp-cookies-boton-cerrar:hover {
+  background-color: #942222;
+  color: #fff !important;
+}

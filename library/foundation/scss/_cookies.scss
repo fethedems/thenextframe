@@ -1,0 +1,85 @@
+.cdp-cookies-alerta {
+  width: 100%;
+  color:#bbbbbb;
+  background-color: #444444;
+  z-index: 10000;
+}
+.cdp-cookies-alerta .cdp-cookies-texto {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 5px 10px 5px 10px;
+}
+.cdp-cookies-alerta .cdp-cookies-texto h4 {
+  // color: $white;
+  padding: 0 0 5px 0;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+}
+.cdp-cookies-alerta .cdp-cookies-texto p {
+  padding: 5px 0;
+  margin: 0;
+  text-align: center;
+  font-size: 10px;
+  font-weight: normal;
+  line-height: 11px;
+  text-rendering: optimizeLegibility;
+}
+
+// Ventana superior
+.cdp-cookies-layout-ventana.cdp-cookies-pos-superior {
+  display: none;
+  position: fixed;
+  top: 0;
+}
+
+// Ventana inferior
+.cdp-cookies-layout-ventana.cdp-cookies-pos-inferior {
+  display: none;
+  position: fixed;
+  bottom: 0;
+}
+
+// Alineación del texto
+.cdp-cookies-alerta.cdp-cookies-textos-izq .cdp-cookies-texto h4,
+.cdp-cookies-alerta.cdp-cookies-textos-izq .cdp-cookies-texto p {
+  text-align: left;
+}
+
+// Color rojo
+.cdp-cookies-alerta.cdp-cookies-tema-rojo {
+  background-color: $link-color;
+}
+.cdp-cookies-alerta.cdp-cookies-tema-rojo .cdp-cookies-texto h4 {
+  color: #ffffff;
+}
+.cdp-cookies-alerta.cdp-cookies-tema-rojo .cdp-cookies-texto p {
+  color: #dddddd;
+}
+.cdp-cookies-alerta.cdp-cookies-tema-rojo .cdp-cookies-texto a {
+  color: $white;
+  font-weight: bold;
+}
+.cdp-cookies-alerta.cdp-cookies-tema-rojo .cdp-cookies-texto a:hover,
+.cdp-cookies-alerta.cdp-cookies-tema-rojo .cdp-cookies-texto a:active,
+.cdp-cookies-alerta.cdp-cookies-tema-rojo .cdp-cookies-texto a:visited {
+  color: #ffffff;
+}
+
+// Boton cerrar
+.cdp-cookies-alerta .cdp-cookies-boton-cerrar {
+  font-size: 12px;
+  line-height: 14px;
+  display: block;
+  width: 75px;
+  margin: 5px auto;
+  text-decoration: none;
+  border: none;
+  text-align: center;
+  padding: 3px 10px;
+  background-color: #222;
+  color: #fff !important;
+}
+.cdp-cookies-alerta .cdp-cookies-boton-cerrar:hover {
+  background-color: $link-hover-color;
+  color: #fff !important;
+}
