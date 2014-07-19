@@ -133,8 +133,9 @@ function bones_scripts_and_styles() {
 		// wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
 
   		// register foundation scripts
-  		wp_register_script( 'modernizr', get_stylesheet_directory_uri() . '/library/foundation/bower_components/modernizr/modernizr.js', array(), '', false );
-  		
+  		//wp_register_script( 'modernizr', get_stylesheet_directory_uri() . '/library/foundation/bower_components/modernizr/modernizr.js', array(), '', false );
+  		wp_register_script( 'modernizr', 'http://cdnjs.cloudflare.com/ajax/libs/foundation/5.3.1/js/vendor/modernizr.js', array(), '', false );
+
 		// register main stylesheet
 		//wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
 
@@ -150,8 +151,11 @@ function bones_scripts_and_styles() {
     }
 
 		//adding scripts file in the footer
-    	wp_register_script( 'jquery', get_stylesheet_directory_uri() . '/library/foundation/bower_components/jquery/dist/jquery.min.js', array(), '', true );
-  		wp_register_script( 'foundationjs', get_stylesheet_directory_uri() . '/library/foundation/bower_components/foundation/js/foundation.js', array(), '', true );
+    	// wp_register_script( 'jquery', get_stylesheet_directory_uri() . '/library/foundation/bower_components/jquery/dist/jquery.min.js', array(), '', true );
+    	wp_register_script( 'jquery', 'http://cdnjs.cloudflare.com/ajax/libs/foundation/5.3.1/js/vendor/jquery.js', array(), '', true );
+  		// wp_register_script( 'foundationjs', get_stylesheet_directory_uri() . '/library/foundation/bower_components/foundation/js/foundation.js', array(), '', true );
+  		wp_register_script( 'foundationjs', 'http://cdnjs.cloudflare.com/ajax/libs/foundation/5.3.1/js/foundation.min.js', array(), '', true );
+  		// wp_register_script( 'appjs', get_stylesheet_directory_uri() . '/library/foundation/js/app.js', array(), '', true );
   		wp_register_script( 'appjs', get_stylesheet_directory_uri() . '/library/foundation/js/app.js', array(), '', true );
 
 		//wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
