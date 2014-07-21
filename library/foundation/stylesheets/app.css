@@ -6520,8 +6520,8 @@ blockquote p {
 }
 /* line 104, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
 meta.foundation-mq-topbar {
-  font-family: "/only screen and (min-width:40.063em)/";
-  width: 40.063em;
+  font-family: "/only screen and (min-width: 44em)/";
+  width: 44em;
 }
 
 /* Wrapped around .top-bar to contain to grid width */
@@ -6967,7 +6967,7 @@ meta.foundation-mq-topbar {
   display: block;
 }
 
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 44em) {
   /* line 436, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
   .top-bar {
     background: #333333;
@@ -8356,41 +8356,47 @@ a:hover {
   font-size: 1em;
 }
 
+@media only screen and (max-width: 24em) {
+  /* line 324, ../scss/_custom.scss */
+  .title-area .name h1 {
+    font-size: 1.4em;
+  }
+}
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  /* line 322, ../scss/_custom.scss */
+  /* line 331, ../scss/_custom.scss */
   #content {
     border: none;
   }
-  /* line 324, ../scss/_custom.scss */
+  /* line 333, ../scss/_custom.scss */
   #content #main {
     border: none;
   }
 }
 @media only screen and (max-width: 40em) {
-  /* line 335, ../scss/_custom.scss */
+  /* line 344, ../scss/_custom.scss */
   #content {
     border: none;
   }
-  /* line 337, ../scss/_custom.scss */
+  /* line 346, ../scss/_custom.scss */
   #content #main {
     border: none;
   }
-  /* line 340, ../scss/_custom.scss */
+  /* line 349, ../scss/_custom.scss */
   #content #main .pair {
     padding: 0px;
     border: none;
     margin: 1em;
   }
-  /* line 346, ../scss/_custom.scss */
+  /* line 355, ../scss/_custom.scss */
   #content #main .pair article {
     border-bottom: 1px dotted #dddddd;
     margin-bottom: 1em;
   }
-  /* line 371, ../scss/_custom.scss */
+  /* line 380, ../scss/_custom.scss */
   #content #main .pair article:nth-child(even) {
     padding: 0px;
   }
-  /* line 376, ../scss/_custom.scss */
+  /* line 385, ../scss/_custom.scss */
   #content #main .pair article:nth-child(odd) {
     padding: 0px;
   }

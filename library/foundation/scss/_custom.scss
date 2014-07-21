@@ -318,6 +318,15 @@ a {
 
 // Media queries
 
+@media only screen and (max-width: 24em) {
+
+	// SCSS para el header
+	.title-area .name h1 {
+	    font-size: 1.4em;
+	}
+
+}
+
 @media #{$medium-only} {
 	#content {
 		border: none;
