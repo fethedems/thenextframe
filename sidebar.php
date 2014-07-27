@@ -2,6 +2,20 @@
 	<div id="sidebar1" class="sidebar large-4 columns" role="complementary">
 
 	<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
+		<div class="social">
+			<ul class="social-list">
+				<li class="social-element">
+					<a href="https://twitter.com/TheNextFrame" class="social-link twitter"></a>
+				</li>
+				<li class="social-element">
+					<a href="https://www.facebook.com/theNextFrame" class="social-link facebook"></a>
+				</li>
+				<li class="social-element">
+					<a href="<?php bloginfo('rss2_url'); ?>" class="social-link feed"></a>
+				</li>
+			</ul>
+		</div>
+
 	<?php dynamic_sidebar( 'sidebar1' ); ?>
 	<?php else : ?>
 	<?php

@@ -64,6 +64,7 @@ a {
 	a {
 		text-transform: uppercase;
 		font-family: $text-font;
+		// font-weight: bold;
 	}
 }
 
@@ -100,6 +101,21 @@ a {
 					-moz-box-shadow: 0px 19px 10px -11px rgba(56,56,56,0.4);
 					box-shadow: 0px 19px 10px -11px rgba(56,56,56,0.4);
 				}
+				
+				.main-category {
+					background-color: $link-color;
+					color: $white;
+					font-size: .8em;
+					padding: .5em;
+					border-bottom-right-radius: 10px;
+
+					position: absolute;
+					
+					&:hover{
+						background-color: $link-hover-color;
+						@include transition(all 0.6s ease-in-out);
+					}
+				}
 
 				.entry-title{
 					font-size: 22px;
@@ -112,6 +128,7 @@ a {
 
 						&:hover{
 							color: $link-hover-color;
+							@include transition(all 0.6s ease-in-out);
 						}
 					}
 				}
@@ -129,18 +146,20 @@ a {
 		}
 		
 		.pagination {
+			// overflow: hidden;
 			min-height: 3em;
+
 			a {
 				background-color: $link-color;
 				color: $white;
 
 				padding: 8px; 
+				margin-top: 1em;
 				margin-left: 32px; 
 				margin-right: 32px; 
 
 				&:hover {
 					background-color: $link-hover-color;
-					@include transition(all 0.6s ease-in-out);
 				}
 			}
 		}
@@ -177,12 +196,17 @@ a {
 			}
 
 			.article-footer {
-				padding-top: 1em;
-				padding-bottom: 1em;
 				margin-top: 2em;
 				margin-bottom: 2em;
-				border-top: 1px dotted $border-color;
 				border-bottom: 1px dotted $border-color;
+
+				p.tags {
+					display: none;
+				}
+			}
+
+			p.author {
+				font-family: $site-title-font;
 			}
 		}
 	}
@@ -193,6 +217,37 @@ a {
 		h1, h2, h3, h4, h5, h6{
 			font-weight: bold;
 			color: #363636;
+		}
+		
+		.social {
+			text-align: center;
+
+			ul.social-list {
+				list-style: none;
+				margin: 0 0 1em 0;
+				padding: 0;
+
+				// border: 1px solid $link-hover-color;
+				li.social-element {
+					display: inline-block;
+					border: 1px solid $link-hover-color;
+					margin: .3em;
+					a.social-link {
+						display: block; // hacemos que ocupe toda el área
+						background-color: $link-color;
+
+						//padding: .5em;
+						//width: 46px;
+						//height: 46px;
+
+
+						&:hover {
+							background-color: $link-hover-color;
+							@include transition(all 0.6s ease-in-out);
+						}
+					}
+				}
+			}
 		}
 
 		.widgettitle{
@@ -216,11 +271,10 @@ a {
 				border: 1px solid $border-color;
 
 				padding: 8px;
-				min-height: 32+8+8px;
-				
-				// @include border-radius(5px);
 				margin-top: 13px;
 				
+				overflow: hidden; // mostramos la imagen flotante correctamente
+
 				&:hover{
 					background-color: $link-color;
 					a {
@@ -231,13 +285,12 @@ a {
 				}
 
 				.popular-title {
-					vertical-align: middle;
+					// vertical-align: middle;
 				}
 
 				.popular-thumbnail {
 					@extend .left;
 					margin-right: 8px;
-					margin-bottom: 8px;
 				}
 			}
 		}
@@ -314,6 +367,17 @@ a {
 		p {	font-size: 1em; }
 	}
 }
+
+//////////////////////////////////////////////////////////////////
+
+// CSS Sprites
+
+.logo, .twitter, .facebook, .feed { display: inline-block; background: url('../../images/sprite.png') no-repeat; overflow: hidden; text-indent: -9999px; text-align: left; }
+
+.twitter{ background-position: 0 0; width: 42px; height: 42px; } 
+.facebook{ background-position: 0 -46px; width: 42px; height: 42px; } 
+.feed{ background-position: 0 -92px; width: 42px; height: 42px; }
+
 //////////////////////////////////////////////////////////////////
 
 // Media queries
@@ -351,28 +415,22 @@ a {
 				border: none;
 				//border-bottom: 1px dotted $border-color;
 				//overflow:hidden;
-				margin: 1em;
+				margin-left: 1em;
+				margin-right: 1em;
+				margin-top: 0;
+				margin-bottom: 0;
+
 				article {
 					border-bottom: 1px dotted $border-color;
-					margin-bottom: 1em; 
+					margin-top: .5em; 
+					margin-bottom: .5em; 
 					.attachment-post-thumbnail {
-						// -webkit-box-shadow: 0px 19px 10px -11px rgba(56,56,56,0.4);
-						// -moz-box-shadow: 0px 19px 10px -11px rgba(56,56,56,0.4);
-						// box-shadow: 0px 19px 10px -11px rgba(56,56,56,0.4);
+
 					}
 
 					.entry-title{
-						// font-size: 22px;
-						// line-height: 1.2em;
-						// margin-top: 1em;
-						// margin-bottom: 1em;
 
 						a {
-							// color: $title;
-
-							// &:hover{
-							// 	color: $link-hover-color;
-							// }
 						}
 					}
 
@@ -387,6 +445,11 @@ a {
 					}
 				}
 			}
+
+			.pagination {
+				margin-top: 32px;
+			}
+
 		}
 	}
 }

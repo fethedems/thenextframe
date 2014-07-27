@@ -51,15 +51,25 @@
 				<?php if($par) echo '<div class="pair">'; // las colocamos de dos en dos ?>
 
 					<article id="post-<?php the_ID(); ?>" class="medium-6 columns" role="article">
+
+						<?php $category = get_the_category(); // tomamos la primera categoría asignada ?>
+						<a class="main-category" href="<?php echo get_category_link( $category[0]->term_id ) ?>"><?php echo $category[0]->cat_name; ?></a>
+					
 						<?php
 						if( has_post_thumbnail() ){
-							the_post_thumbnail();
+							echo '<a href="'.get_permalink().'" rel="bookmark" title="'.get_the_title().'">';
+								the_post_thumbnail();
+							echo '</a>';
 						} else {
 							// echo '<img class="attachment-post-thumbnail" src="http://placehold.it/640x400&text=Placeholder">';
-							echo '<img class="attachment-post-thumbnail" src="/wp-content/themes/thenextframe/library/images/leather.png">';
+							// echo '<img class="attachment-post-thumbnail" src="/wp-content/themes/thenextframe/library/images/leather.png">';
+
+							echo '<a href="'.get_permalink().'" rel="bookmark" title="'.get_the_title().'">
+								<img class="attachment-post-thumbnail" src="/wp-content/themes/thenextframe/library/images/leather.png">
+							</a>';
 						}
 						?>
-						
+
 						<h1 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 					</article> <!-- end article -->
 

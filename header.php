@@ -53,7 +53,7 @@
 
 <body <?php body_class(); ?>>
 	<div id="container">
-		<header class="header" role="banner">
+		<header class="header sticky" role="banner">
    			<nav class="top-bar header-narrow" data-topbar>
 
    				<!-- web title -->

@@ -16,8 +16,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="article-header">
     <h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
-      <p class="text-center">
-        <?php printf( __( 'Publicado el <time class="updated" datetime="%1$s" pubdate>%2$s</time> por <span class="author">%3$s</span>', 'bonestheme' ), get_the_time('Y-m-j'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
+      <p class="author text-center">
+        <?php // printf( __( 'Publicado el <time class="updated" datetime="%1$s" pubdate>%2$s</time> por <span class="author">%3$s</span>', 'bonestheme' ), get_the_time('Y-m-j'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
+        <?php printf( __( '<span class="author">%3$s </span>(<time class="updated" datetime="%1$s" pubdate>%2$s</time>)', 'bonestheme' ), get_the_time('Y-m-j'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
       </p>
   </header> <?php // end article header ?>
 
@@ -47,8 +48,8 @@
   </section> <?php // end article section ?>
 
   <footer class="article-footer">
-    <?php printf(get_the_category_list(', ') ); ?>
-    <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
+    <?php // printf(get_the_category_list(', ') ); ?>
+    <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', '/', '</p>' ); ?>
   </footer> <?php // end article footer ?>
 
   <?php comments_template(); ?>
